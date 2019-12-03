@@ -1,16 +1,23 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
 
-import { AppComponent } from './app.component';
+import { AppComponent } from "./components/app.component";
+import { BoardComponent } from "./components/board.component";
+import { SquareComponent } from "./components/square.component";
+import { WinnerService } from "./services/winner.service";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BoardComponent,
+    SquareComponent
   ],
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [
+    { provide: "IWinnerService", useClass: WinnerService }
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

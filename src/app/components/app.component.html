@@ -1,0 +1,13 @@
+<div class="game">
+  <div class="game-board">
+    <board [(gameState)]="gameState" (gameStateChange)="updateGameState($event)"></board>
+  </div>
+  <div class="game-info">
+    <div>{{status()}}</div>
+    <ol>
+      <li *ngFor="let item of gameState.history; index as move">
+        <button (click)="jumpTo(move)">{{moveText(move)}}</button>
+      </li>
+    </ol>
+  </div>
+</div>
