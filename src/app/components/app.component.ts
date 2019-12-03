@@ -10,7 +10,7 @@ export class AppComponent implements OnInit {
   title = "angular-game-demo";
   gameState: IGameState;
 
-  // Downside: Must use non-interface type or manually map the interface in
+  // Must use non-interface type or manually map the interface in
   // module provider array.
   constructor(@Inject("IWinnerService") private winnerService: IWinnerService) {}
 
